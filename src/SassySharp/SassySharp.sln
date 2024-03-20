@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34707.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SassySharp", "SassySharp\SassySharp.csproj", "{330B6707-8DFA-4E04-96D4-3ADC5178CC78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7CDE7798-928E-4429-8514-DED743F57908}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{330B6707-8DFA-4E04-96D4-3ADC5178CC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{330B6707-8DFA-4E04-96D4-3ADC5178CC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{330B6707-8DFA-4E04-96D4-3ADC5178CC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{330B6707-8DFA-4E04-96D4-3ADC5178CC78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49E84493-A05F-4288-B133-45E76EC4C795}
+	EndGlobalSection
+EndGlobal
