@@ -1,4 +1,4 @@
-name: ToolCart Build
+name: SassySharp Build
 
 on:
   create:
