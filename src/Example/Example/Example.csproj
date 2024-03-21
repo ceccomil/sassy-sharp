@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -11,9 +11,12 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.2" PrivateAssets="all" />
   </ItemGroup>
 
-  <Target Name="SassySharp" AfterTargets="PreBuildEvent" Condition="$(Configuration) == Release">
+  <Target Name="SassySharpCompile" AfterTargets="PreBuildEvent" >
     <Exec Command="sassy-sharp --app-root $(ProjectDir) --lib-folders $(ProjectDir)wwwroot\css\bootstrap;$(ProjectDir)wwwroot\css\fontawesome" />
   </Target>
 
+  <Target Name="SassySharpClean" AfterTargets="AfterClean" >
+    <Exec Command="sassy-sharp --app-root $(ProjectDir) --clean-css" />
+  </Target>
 
 </Project>
