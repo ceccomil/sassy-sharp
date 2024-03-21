@@ -9,21 +9,19 @@
         x.Add(new("SassySharp", LogLevel.Information));
       })
       .AddDefaultLogger()
+      .Configure<CaptainLoggerOptions>(x =>
+      {
+        var path = Path.Combine(
+          Globals.ToolFolder.FullName,
+          "Logs/sassy-sharp.log");
+
+        var dir = new DirectoryInfo(path);
+
+        x.FilePath = dir.FullName;
+      })
       .AddSingleton<IWardenSvc, WardenSvc>()
       .AddSingleton<IScssCompilerSvc, ScssCompilerSvc>()
       .AddSingleton<ICleanerSvc, CleanerSvc>();
-
-    return Task.CompletedTask;
-  },
-  AppConfig = host =>
-  {
-    var warden = host
-      .Services
-      .GetRequiredService<IWardenSvc>();
-
-    Environment.CurrentDirectory = warden
-      .GetToolPath()
-      .FullName;
 
     return Task.CompletedTask;
   }
