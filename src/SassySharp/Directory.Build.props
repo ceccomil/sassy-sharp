@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Authors>Chekko Milani</Authors>
     <Company>Chekko Milani</Company>
-    <PackageVersion>1.0.0-alpha.1.1</PackageVersion>
+    <PackageVersion>1.0.0-alpha.2.0</PackageVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>

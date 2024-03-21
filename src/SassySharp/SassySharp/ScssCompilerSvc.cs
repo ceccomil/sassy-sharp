@@ -23,15 +23,16 @@ internal sealed class ScssCompilerSvc(
         scss.Name.Length -
         scss.Extension.Length);
 
-    var fileName = scss
-      .Directory!
-      .FullName +
-      $"\\{name}.css";
+    var fileName = Path.Combine(
+      scss.Directory!.FullName,
+      $"{name}.css");
+
+    var fi = new FileInfo(fileName);
 
     _logger.InformationLog(
-      $"Compiled file: {fileName}");
+      $"Compiled file: {fi.FullName}");
 
-    return fileName;
+    return fi.FullName;
   }
 
   private void CompileFolder(

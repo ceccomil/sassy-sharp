@@ -14,6 +14,18 @@
       .AddSingleton<ICleanerSvc, CleanerSvc>();
 
     return Task.CompletedTask;
+  },
+  AppConfig = host =>
+  {
+    var warden = host
+      .Services
+      .GetRequiredService<IWardenSvc>();
+
+    Environment.CurrentDirectory = warden
+      .GetToolPath()
+      .FullName;
+
+    return Task.CompletedTask;
   }
 };
 
