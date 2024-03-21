@@ -1,8 +1,10 @@
 ﻿global using CaptainLogger;
+global using CaptainLogger.Options;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Logging;
 global using SassySharp;
+global using SassySharp.Helpers;
 global using System.Diagnostics;
 global using System.Reflection;
 global using System.Runtime.InteropServices;

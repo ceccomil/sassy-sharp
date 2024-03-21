@@ -197,17 +197,8 @@ internal sealed class WardenSvc(
       "Warden service initialized!");
   }
 
-  public DirectoryInfo GetToolPath()
-  {
-    string assemblyFolder = Path
-      .GetDirectoryName(
-        Assembly
-        .GetExecutingAssembly()
-        .Location)!;
-
-    return new DirectoryInfo(
-      assemblyFolder);
-  }
+  public DirectoryInfo GetToolPath() => Globals
+    .ToolFolder;
 
   public FileInfo[] GetFiles(
     string extension,
