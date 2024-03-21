@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ToolCart" Version="1.0.1" />
-    <PackageReference Include="ToolCart.Logging" Version="1.0.1" />
+    <PackageReference Include="ToolCart" Version="1.0.2" />
+    <PackageReference Include="ToolCart.Logging" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>
