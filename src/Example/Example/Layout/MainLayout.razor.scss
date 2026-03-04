@@ -1,4 +1,4 @@
-@import '../wwwroot/css/common';
+@use '../wwwroot/css/common' as common;
 
 .page {
     position: relative;
@@ -11,12 +11,12 @@ main {
 }
 
 .sidebar {
-    background-image: linear-gradient(180deg, $primary-1 0%, $bg-default 70%);
+    background-image: linear-gradient(180deg, common.$primary-1 0%, common.$bg-default 70%);
 }
 
 .top-row {
-    background-color: $bg-default;
-    border-bottom: 1px solid $primary-1;
+    background-color: common.$bg-default;
+    border-bottom: 1px solid common.$primary-1;
     justify-content: flex-end;
     height: 3.5rem;
     display: flex;

@@ -23,6 +23,8 @@ internal sealed class EntryPointSvc(
           .Clean(cancellationToken);
 
         _appHandler.Exit();
+
+        return;
       }
 
       await _scssCompilerSvc

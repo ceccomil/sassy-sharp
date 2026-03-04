@@ -1,4 +1,4 @@
-@import '../wwwroot/css/common';
+@use '../wwwroot/css/common' as common;
 
 .navbar-toggler {
     background-color: rgba(255, 255, 255, 0.1);
@@ -49,7 +49,7 @@
     }
 
     .nav-item ::deep a {
-        color: $primary-1;
+        color: common.$primary-1;
         border-radius: 4px;
         height: 3rem;
         display: flex;
@@ -57,15 +57,15 @@
         line-height: 3rem;
     }
 
-.nav-item ::deep a.active {
-    background-color: $bg-default;
-    color: $primary-1-active;
-}
+      .nav-item ::deep a.active {
+        background-color: common.$bg-default;
+        color: common.$primary-1-active;
+      }
 
-.nav-item ::deep a:hover {
-    background-color: $bg-default;
-    color: $primary-1-hover;
-}
+      .nav-item ::deep a:hover {
+        background-color: common.$bg-default;
+        color: common.$primary-1-hover;
+      }
 
 @media (min-width: 641px) {
     .navbar-toggler {
