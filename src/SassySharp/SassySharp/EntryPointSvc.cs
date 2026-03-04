@@ -5,14 +5,14 @@ internal sealed class EntryPointSvc(
   IWardenSvc _wardenSvc,
   ICleanerSvc _cleanerSvc,
   IScssCompilerSvc _scssCompilerSvc,
-  ICaptainLogger<EntryPointSvc> _logger) : IExecutor
+  ILogger<EntryPointSvc> _logger) : IExecutor
 {
   public async Task MainTask(
     CancellationToken cancellationToken)
   {
     try
     {
-      _logger.InformationLog(
+      _logger.LogInformation(
         "Single execution started!");
 
       _wardenSvc.Initialize();
@@ -32,9 +32,9 @@ internal sealed class EntryPointSvc(
     }
     catch (Exception ex)
     {
-      _logger.ErrorLog(
-        "An error occurred.",
-        ex);
+      _logger.LogError(
+        ex,
+        "An error occurred.");
 
       _appHandler.Exit(ErrorCode.CriticalError);
     }

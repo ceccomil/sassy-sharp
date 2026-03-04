@@ -17,7 +17,7 @@ public interface IWardenSvc
 
 internal sealed class WardenSvc(
   IConfiguration _config,
-  ICaptainLogger<WardenSvc> _logger) : IWardenSvc
+  ILogger<WardenSvc> _logger) : IWardenSvc
 {
   private static readonly char[] _separator = [';'];
 
@@ -41,9 +41,9 @@ internal sealed class WardenSvc(
         .FullName}' does not exist!");
     }
 
-    _logger.InformationLog(
-      $"App root folder: '{AppRootFolder
-      .FullName}'");
+    _logger.LogInformation(
+      "App root folder: {FullName}",
+      AppRootFolder.FullName);
   }
 
   private void InitAndValidateFullLibs()
@@ -72,9 +72,9 @@ internal sealed class WardenSvc(
           .FullName}' does not exist!");
       }
 
-      _logger.InformationLog(
-        $"Lib folder: '{FullLibPaths[i]
-        .FullName}'");
+      _logger.LogInformation(
+        "Lib folder: {FullName}",
+        FullLibPaths[i].FullName);
     }
   }
 
@@ -161,9 +161,10 @@ internal sealed class WardenSvc(
         "this OS is not found");
     }
 
-    _logger.InformationLog(
-      $"Dart Sass : '{DartSassPath}" +
-      $"', '{Snapshot}'");
+    _logger.LogInformation(
+      "Dart Sass : {DartSassPath}, {Snapshot}",
+      DartSassPath,
+      Snapshot);
   }
 
   private static bool IsPartOfTheTree(
@@ -188,12 +189,13 @@ internal sealed class WardenSvc(
     CleansingRequired = _config
       .SwitchIsOn("Clean-css");
 
-    _logger.InformationLog(
-      $"Cleansing required: {CleansingRequired}");
+    _logger.LogInformation(
+      "Cleansing required: {CleansingRequired}",
+      CleansingRequired);
 
     InitDart();
 
-    _logger.InformationLog(
+    _logger.LogInformation(
       "Warden service initialized!");
   }
 
@@ -222,14 +224,16 @@ internal sealed class WardenSvc(
     {
       if (IsPartOfTheTree(file.FullName, libs))
       {
-        _logger.InformationLog(
-          $"Excluded file: {file}");
+        _logger.LogInformation(
+          "Excluded file: {File}",
+          file);
 
         continue;
       }
 
-      _logger.InformationLog(
-        $"Found: {file}");
+      _logger.LogInformation(
+        "Found: {File}",
+        file);
 
       resultList.Add(file);
     }
