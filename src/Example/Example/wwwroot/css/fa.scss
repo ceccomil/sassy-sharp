@@ -1,4 +1,4 @@
-﻿@import "./fontawesome/styles/fontawesome.scss";
-@import "./fontawesome/styles/brands.scss";
-@import "./fontawesome/styles/regular.scss";
-@import "./fontawesome/styles/solid.scss";
+﻿@use "./fontawesome/scss/fontawesome.scss" as fa;
+@use "./fontawesome/scss/brands.scss" as fa-brands;
+@use "./fontawesome/scss/regular.scss" as fa-regular;
+@use "./fontawesome/scss/solid.scss" as fa-solid;

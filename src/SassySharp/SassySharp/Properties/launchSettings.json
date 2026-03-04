@@ -2,9 +2,7 @@
   "profiles": {
     "SassySharp": {
       "commandName": "Project",
-      // "commandLineArgs": "--AppRoot \"D:\\Dev\\Gpm\\inFocus.Plato\\src\\Infocus.Plato\\Infocus.Plato\" --libFolders \"D:\\Dev\\Gpm\\inFocus.Plato\\src\\Infocus.Plato\\Infocus.Plato\\wwwroot\\css\\bootstrap;D:\\Dev\\Gpm\\inFocus.Plato\\src\\Infocus.Plato\\Infocus.Plato\\wwwroot\\css\\fontawesome\""
-      "commandLineArgs": "--app-root \"D:\\Dev\\Gpm\\inFocus.Plato\\src\\Infocus.Plato\\Infocus.Plato\" --lib-folders \"D:\\Dev\\Gpm\\inFocus.Plato\\src\\Infocus.Plato\\Infocus.Plato\\wwwroot\\css\\bootstrap;D:\\Dev\\Gpm\\inFocus.Plato\\src\\Infocus.Plato\\Infocus.Plato\\wwwroot\\css\\fontawesome\""
-
+      "commandLineArgs": "--app-root \"D:\\Dev\\GitHub\\CeccoMil\\sassy-sharp\\src\\Example\\Example\" --lib-folders \"D:\\Dev\\GitHub\\CeccoMil\\sassy-sharp\\src\\Example\\Example\\wwwroot\\css\\bootstrap;D:\\Dev\\GitHub\\CeccoMil\\sassy-sharp\\src\\Example\\Example\\wwwroot\\css\\fontawesome\""
     }
   }
 }
