@@ -8,7 +8,7 @@ public interface IScssCompilerSvc
 
 internal sealed class ScssCompilerSvc(
   IWardenSvc _wardenSvc,
-  ICaptainLogger<ScssCompilerSvc> _logger) : IScssCompilerSvc
+  ILogger<ScssCompilerSvc> _logger) : IScssCompilerSvc
 {
   private const string NO_SOURCE_MAP = "--no-source-map";
   private const string STOP_ON_ERROR = "--stop-on-error";
@@ -29,8 +29,9 @@ internal sealed class ScssCompilerSvc(
 
     var fi = new FileInfo(fileName);
 
-    _logger.InformationLog(
-      $"Compiled file: {fi.FullName}");
+    _logger.LogInformation(
+      "Compiled file: {FullName}",
+      fi.FullName);
 
     return fi.FullName;
   }
@@ -61,8 +62,9 @@ internal sealed class ScssCompilerSvc(
         $"{path} cannot be compiled!");
     }
 
-    _logger.InformationLog(
-      $"{path.FullName} has been compiled");
+    _logger.LogInformation(
+      "{FullName} has been compiled",
+      path.FullName);
   }
 
   private void CompileFile(
@@ -100,14 +102,12 @@ internal sealed class ScssCompilerSvc(
   {
     await Task.Run(() =>
     {
-      _logger.InformationLog(
+      _logger.LogInformation(
         "Begin Scss compilation");
 
-      _logger.InformationLog(
-          "Searching files " +
-          $"from: {_wardenSvc
-            .AppRootFolder!
-            .FullName}");
+      _logger.LogInformation(
+          "Searching files from: {FullName}",
+          _wardenSvc.AppRootFolder!.FullName);
 
       var files = _wardenSvc.GetFiles("scss");
 

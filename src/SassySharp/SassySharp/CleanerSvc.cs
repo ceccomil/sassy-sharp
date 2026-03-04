@@ -2,22 +2,19 @@
 
 public interface ICleanerSvc
 {
-  Task Clean(
-    CancellationToken cancellationToken);
+  Task Clean(CancellationToken cancellationToken);
 }
 
 internal sealed class CleanerSvc(
   IWardenSvc _wardenSvc,
-  ICaptainLogger<CleanerSvc> _logger) : ICleanerSvc
+  ILogger<CleanerSvc> _logger) : ICleanerSvc
 {
   private async Task CleanCss(
     CancellationToken cancellationToken)
   {
-    _logger.InformationLog(
-      "Searching files " +
-      $"from: {_wardenSvc
-        .AppRootFolder!
-        .FullName}");
+    _logger.LogInformation(
+      "Searching files from: {FullName}",
+      _wardenSvc.AppRootFolder!.FullName);
 
     await Task.Run(() =>
     {
@@ -34,8 +31,9 @@ internal sealed class CleanerSvc(
 
         file.Delete();
 
-        _logger.InformationLog(
-          $"{file} has been deleted");
+        _logger.LogInformation(
+          "{File} has been deleted",
+          file);
       }
     },
     cancellationToken);
@@ -52,7 +50,7 @@ internal sealed class CleanerSvc(
       return;
     }
 
-    _logger.InformationLog(
+    _logger.LogInformation(
       "Deleting all css files");
 
     await CleanCss(cancellationToken);

@@ -1,5 +1,4 @@
-﻿global using CaptainLogger;
-global using CaptainLogger.Options;
+﻿global using CaptainLogger.Contracts.Options;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Logging;
