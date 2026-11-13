@@ -13,7 +13,8 @@ internal sealed class EntryPointSvc(
     try
     {
       _logger.LogInformation(
-        "Single execution started!");
+        "Single execution started! SassySharp {Version}", 
+        GetVersion());
 
       _wardenSvc.Initialize();
 
@@ -41,4 +42,31 @@ internal sealed class EntryPointSvc(
       await _appHandler.Exit(ErrorCode.CriticalError);
     }
   }
+
+  private static string GetVersion()
+  {
+    //var msixVersion = TryGetMsixPackageVersion();
+
+    //if (!string.IsNullOrWhiteSpace(msixVersion))
+    //{
+    //  return msixVersion;
+    //}
+
+    var version = "v unknown";
+
+    var assembly = typeof(EntryPointSvc).Assembly;
+
+    var fileVersion = assembly
+      .GetCustomAttribute<AssemblyFileVersionAttribute>()?
+      .Version;
+
+    if (!string.IsNullOrWhiteSpace(fileVersion))
+    {
+      version = $"v {fileVersion}";
+    }
+
+    return version;
+  }
+
+
 }
