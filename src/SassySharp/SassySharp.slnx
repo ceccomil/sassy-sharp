@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="../../.github/workflows/sassy-sharp-build.yml" />
+    <File Path="../../README.md" />
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+  </Folder>
+  <Project Path="SassySharp/SassySharp.csproj" />
+</Solution>

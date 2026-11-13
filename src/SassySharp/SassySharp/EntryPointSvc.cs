@@ -22,7 +22,7 @@ internal sealed class EntryPointSvc(
         await _cleanerSvc
           .Clean(cancellationToken);
 
-        _appHandler.Exit();
+        await _appHandler.Exit();
 
         return;
       }
@@ -30,7 +30,7 @@ internal sealed class EntryPointSvc(
       await _scssCompilerSvc
         .RunCompiler(cancellationToken);
 
-      _appHandler.Exit();
+      await _appHandler.Exit();
     }
     catch (Exception ex)
     {
@@ -38,7 +38,7 @@ internal sealed class EntryPointSvc(
         ex,
         "An error occurred.");
 
-      _appHandler.Exit(ErrorCode.CriticalError);
+      await _appHandler.Exit(ErrorCode.CriticalError);
     }
   }
 }
